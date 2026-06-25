@@ -1,0 +1,12 @@
+{
+  // Static-assets-only Worker: serve the Astro `dist/` output directly.
+  // No `main` script and no SSR adapter — this is a fully static site.
+  // Having this file stops `wrangler deploy` from trying to auto-add the
+  // @astrojs/cloudflare adapter (which fails in non-interactive CI).
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "meat-center",
+  "compatibility_date": "2026-06-25",
+  "assets": {
+    "directory": "./dist"
+  }
+}
