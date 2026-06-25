@@ -1,0 +1,34 @@
+---
+import type { Review } from '@data/reviews';
+interface Props {
+  review: Review;
+}
+const { review } = Astro.props;
+---
+
+<blockquote class="review">
+  <p class="review-stars" aria-label="5 out of 5 stars">★★★★★</p>
+  <p class="review-quote">“{review.quote}”</p>
+  <cite>— {review.name}</cite>
+</blockquote>
+
+<style>
+  .review {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    padding: 1.4rem 1.5rem;
+    margin: 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .review-stars { color: var(--gold); letter-spacing: 0.12em; margin: 0 0 0.6rem; }
+  .review-quote { margin: 0 0 0.7rem; font-size: 1.05rem; }
+  .review cite {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.85rem;
+    font-style: normal;
+    color: var(--red);
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Nav from '@components/Nav.astro';
+import Hero from '@components/Hero.astro';
+import WeeklySpecial from '@components/WeeklySpecial.astro';
+import Offerings from '@components/Offerings.astro';
+import Gallery from '@components/Gallery.astro';
+import Bundles from '@components/Bundles.astro';
+import Preorder from '@components/Preorder.astro';
+import SignupBand from '@components/SignupBand.astro';
+import Reviews from '@components/Reviews.astro';
+import Visit from '@components/Visit.astro';
+import FAQ from '@components/FAQ.astro';
+import SiteFooter from '@components/SiteFooter.astro';
+import MobileCallBar from '@components/MobileCallBar.astro';
+---
+
+<Layout>
+  <a class="skip-link" href="#special">Skip to content</a>
+  <Nav />
+  <Hero />
+  <main id="main">
+    <WeeklySpecial />
+    <Offerings />
+    <Gallery />
+    <Bundles />
+    <Preorder />
+    <SignupBand />
+    <Reviews />
+    <Visit />
+    <FAQ />
+  </main>
+  <SiteFooter />
+  <MobileCallBar />
+</Layout>

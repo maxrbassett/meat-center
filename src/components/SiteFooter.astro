@@ -1,0 +1,102 @@
+---
+import * as site from '@data/site';
+---
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <p class="footer-name">
+        <span class="footer-the">The</span> Meat Center
+      </p>
+      <p class="footer-line">{site.familyOwnedShort} · Lancaster, SC</p>
+      <p class="footer-line">{site.addressOneLine}</p>
+      <p class="footer-line"><a href={`tel:${site.phoneTel}`}>{site.phone}</a></p>
+      <p class="footer-social">
+        <a href={site.facebookUrl} target="_blank" rel="noopener">Follow us on Facebook</a>
+      </p>
+    </div>
+
+    <div>
+      <p class="footer-head">Explore</p>
+      <ul class="footer-links">
+        {site.nav.map((n) => <li><a href={n.href}>{n.label}</a></li>)}
+      </ul>
+    </div>
+
+    <div>
+      <p class="footer-head">Hours</p>
+      <ul class="footer-hours">
+        {
+          site.hoursOrder.map((day) => {
+            const h = site.hours[day];
+            return (
+              <li><span>{h.label}</span><span>{h.display}</span></li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-fine">
+    <p>© {site.name}, {site.address.city}, {site.address.state}. All rights reserved.</p>
+    <p class="footer-poc">Proof-of-concept website · not yet live</p>
+  </div>
+</footer>
+
+<style>
+  .footer { background: var(--charcoal); color: var(--cream); padding-block: 3rem 1.5rem; }
+  .footer a { color: var(--gold-soft); }
+  .footer-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 720px) { .footer-grid { grid-template-columns: 1.4fr 0.8fr 1fr; } }
+
+  .footer-name {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #fff;
+    margin: 0 0 0.5rem;
+  }
+  .footer-the { color: var(--gold-soft); font-size: 0.7em; letter-spacing: 0.2em; }
+  .footer-line { margin: 0.2rem 0; color: #e9ddc8; font-size: 0.95rem; }
+  .footer-social { margin-top: 0.75rem; }
+
+  .footer-head {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.85rem;
+    color: var(--gold-soft);
+    margin: 0 0 0.7rem;
+  }
+  .footer-links, .footer-hours { list-style: none; margin: 0; padding: 0; }
+  .footer-links li { margin-bottom: 0.45rem; }
+  .footer-links a { text-decoration: none; }
+  .footer-hours li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.2rem 0;
+    color: #e9ddc8;
+    font-size: 0.92rem;
+  }
+
+  .footer-fine {
+    margin-top: 2.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(250, 246, 238, 0.15);
+    font-size: 0.82rem;
+    color: #b8ad9b;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .footer-fine p { margin: 0; }
+  .footer-poc { color: #8a8174; }
+</style>

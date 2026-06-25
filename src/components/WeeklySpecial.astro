@@ -1,0 +1,122 @@
+---
+import * as site from '@data/site';
+import { Image } from 'astro:assets';
+import special from '@assets/cut-strip.jpg';
+const s = site.weeklySpecial;
+---
+
+<section id="special" class="special" aria-labelledby="special-title">
+  <div class="wrap">
+    <div class="special-card">
+      <div class="special-media">
+        <Image src={special} alt="Premium Certified Angus Beef cuts" widths={[400, 700, 900]} sizes="(min-width: 880px) 44vw, 100vw" />
+        <span class="ribbon">{s.badge}</span>
+      </div>
+
+      <div class="special-body">
+        <p class="eyebrow special-week" data-week>Updated weekly</p>
+        <h2 id="special-title" class="special-title">{s.title}</h2>
+        <p class="special-price"><span class="amt">{s.price}</span></p>
+        <p class="special-blurb">{s.blurb}</p>
+
+        <ul class="special-items">
+          {s.items.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <div class="special-cta">
+          <a class="btn btn-primary" href={`tel:${site.phoneTel}`}>
+            <span aria-hidden="true">📞</span> Call to reserve
+          </a>
+          <a class="btn btn-outline" href="#bundles">See all bundles</a>
+        </div>
+        <p class="special-note">{s.note}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // "Alive" touch: show the current week so the deal reads as current.
+  const el = document.querySelector('[data-week]');
+  if (el) {
+    const now = new Date();
+    const monday = new Date(now);
+    monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
+    const fmt = monday.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    el.textContent = `Week of ${fmt}`;
+  }
+</script>
+
+<style>
+  .special { background: var(--charcoal); }
+  .special-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  .special-media { position: relative; min-height: 220px; }
+  .special-media :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .ribbon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--red);
+    color: #fff;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .special-body { padding: clamp(1.5rem, 4vw, 2.75rem); }
+  .special-week { color: var(--red); margin-bottom: 0.4rem; }
+  .special-title {
+    text-transform: uppercase;
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    margin-bottom: 0.5rem;
+  }
+  .special-price { margin: 0 0 0.75rem; }
+  .special-price .amt {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    color: var(--red);
+    line-height: 1;
+  }
+  .special-blurb { color: var(--charcoal-soft); max-width: 50ch; margin-bottom: 1.1rem; }
+
+  .special-items {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem 1.25rem;
+  }
+  .special-items li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.98rem;
+  }
+  .special-items li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  .special-cta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 0.9rem; }
+  .special-note { font-size: 0.92rem; color: var(--charcoal-soft); }
+
+  @media (min-width: 880px) {
+    .special-card { grid-template-columns: 0.85fr 1.15fr; }
+    .special-items { grid-template-columns: 1fr 1fr; }
+  }
+</style>

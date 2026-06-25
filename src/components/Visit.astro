@@ -1,0 +1,132 @@
+---
+import * as site from '@data/site';
+---
+
+<section id="visit" class="visit" aria-labelledby="visit-title">
+  <div class="wrap">
+    <p class="eyebrow">Visit us</p>
+    <h2 id="visit-title" class="section-title">Come see the case</h2>
+
+    <div class="visit-grid">
+      <div class="visit-info">
+        <div class="info-block">
+          <h3 class="vh">Address</h3>
+          <p class="addr">
+            <a href={site.mapsUrl} target="_blank" rel="noopener">
+              {site.address.street}<br />
+              {site.address.city}, {site.address.state} {site.address.zip}
+            </a>
+          </p>
+          <p class="way">{site.wayfinding}</p>
+          <div class="visit-cta">
+            <a class="btn btn-primary" href={`tel:${site.phoneTel}`}>
+              <span aria-hidden="true">📞</span> {site.phone}
+            </a>
+            <a class="btn btn-outline" href={site.directionsUrl} target="_blank" rel="noopener">Get directions</a>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <h3 class="vh">Weekly hours</h3>
+          <table class="hours" data-hours-table>
+            <caption class="sr-only">The Meat Center weekly opening hours</caption>
+            <tbody>
+              {
+                site.hoursOrder.map((day) => {
+                  const h = site.hours[day];
+                  const closed = h.open === null;
+                  return (
+                    <tr data-day={day}>
+                      <th scope="row">{h.label}</th>
+                      <td class={closed ? 'closed' : ''}>{h.display}</td>
+                    </tr>
+                  );
+                })
+              }
+            </tbody>
+          </table>
+          <ul class="trust-lines">
+            <li>{site.pickupNote}</li>
+            <li>{site.inspectionLine}</li>
+            <li>Hours can vary on holidays — please call ahead.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="visit-map">
+        <iframe
+          title="Map to The Meat Center"
+          src={site.mapEmbedUrl}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const KEYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  const todayKey = KEYS[new Date().getDay()];
+  const row = document.querySelector(`[data-hours-table] [data-day="${todayKey}"]`);
+  if (row) row.classList.add('is-today');
+</script>
+
+<style>
+  .visit { background: var(--cream-deep); }
+  .visit-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 880px) { .visit-grid { grid-template-columns: 1fr 1fr; align-items: stretch; } }
+
+  .visit-info { display: grid; gap: 1.5rem; align-content: start; }
+  .info-block {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .vh {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--red);
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+  .addr a {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--charcoal);
+    line-height: 1.25;
+  }
+  .addr a:hover { color: var(--red); }
+  .way { color: var(--charcoal-soft); margin: 0.5rem 0 1rem; font-size: 0.95rem; }
+  .visit-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+  .hours { width: 100%; border-collapse: collapse; }
+  .hours th, .hours td { text-align: left; padding: 0.6rem 0.25rem; border-bottom: 1px solid var(--line); }
+  .hours tr:last-child th, .hours tr:last-child td { border-bottom: none; }
+  .hours th { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; font-weight: 600; color: var(--charcoal); }
+  .hours td { text-align: right; color: var(--ink); }
+  .hours td.closed { color: var(--red); }
+  .hours tr.is-today { background: #fbf3dd; }
+  .hours tr.is-today th::after { content: ' · Today'; color: var(--red); font-size: 0.75rem; }
+
+  .trust-lines { list-style: none; margin: 1rem 0 0; padding: 0; }
+  .trust-lines li { position: relative; padding-left: 1.5rem; margin-bottom: 0.4rem; color: var(--charcoal-soft); font-size: 0.92rem; }
+  .trust-lines li::before { content: '✓'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+
+  .visit-map {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    min-height: 340px;
+    border: 1px solid var(--line);
+  }
+  .visit-map iframe { width: 100%; height: 100%; min-height: 340px; border: 0; display: block; }
+</style>

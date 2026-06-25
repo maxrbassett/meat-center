@@ -1,0 +1,46 @@
+---
+import * as site from '@data/site';
+---
+
+<div class="callbar" aria-label="Quick contact">
+  <a class="callbar-btn primary" href={`tel:${site.phoneTel}`}>
+    <span aria-hidden="true">📞</span> Call
+  </a>
+  <a class="callbar-btn" href={`sms:${site.phoneSms}`}>
+    <span aria-hidden="true">💬</span> Text
+  </a>
+  <a class="callbar-btn" href={site.directionsUrl} target="_blank" rel="noopener">
+    <span aria-hidden="true">📍</span> Directions
+  </a>
+</div>
+
+<style>
+  .callbar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 90;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -6px 20px rgba(27, 23, 20, 0.12);
+  }
+  .callbar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.85rem 0.5rem;
+    background: var(--white);
+    color: var(--charcoal);
+    text-decoration: none;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+  }
+  .callbar-btn.primary { background: var(--red); color: #fff; }
+
+  @media (min-width: 768px) { .callbar { display: none; } }
+</style>

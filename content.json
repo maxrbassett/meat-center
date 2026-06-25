@@ -1,0 +1,323 @@
+{
+  "_meta": {
+    "business_target": "Meat Center — butcher / meat market, Lancaster, SC",
+    "target_phone_used_to_anchor_research": "803-286-5077",
+    "research_date": "2026-06-18",
+    "researched_by": "Claude (intake research for one-page Astro site)",
+    "verification_tag_legend": {
+      "verified_2plus": "stated consistently by 2+ independent sources",
+      "single_source": "found in only one source",
+      "uncertain": "found, but sources conflict OR may be conflated with a different/closed business",
+      "not_found": "could not be confirmed anywhere; see open_questions in brief.md"
+    },
+    "CRITICAL_DISAMBIGUATION": "UPDATED 2026-06-18 after browsing the LIVE Facebook page: facebook.com/TheMeatCenter IS the target business — its Intro lists '657 Lancaster bypass east, Lancaster, SC' and '(803) 286-5077', shows 'Open now', 43K followers, 98% recommend (507 reviews). Earlier search engines wrongly conflated it with a SEPARATE, CLOSED business ('Buford Meat Station' / 'Buford Meat Center', 4457 Pageland Hwy, phone 803-283-4121 — Yelp/BBB show out-of-business). CONCLUSION: trust facebook.com/TheMeatCenter as a FIRST-PARTY source for the target. The closed Pageland Hwy business is unrelated and must not be mixed in.",
+    "FACEBOOK_NOTE": "Facebook shows logged-out visitors only ONE recent post plus the Photos grid (login wall). I did NOT log in. Content in 'facebook_first_party' below came from that one public post and the Photos tab auto-generated alt text; older post history was not accessible. IMPORTANT: 'SINCE 1978' seen on a graphic = the Certified Angus Beef BRAND (founded 1978), NOT the shop's founding year. Facebook image URLs are temporary scontent.fbcdn.net links that expire and are NOT licensed for republishing — get originals from the owner.",
+    "do_not_use": "ButcherBud listing (butcherbud.com) lists generic template services (dry-aging, house-made sausage, whole-animal processing, etc.) that are NOT specific to this business. These were excluded and must not be presented as facts."
+  },
+
+  "identity": {
+    "display_name": {
+      "value": "Meat Center",
+      "tag": "verified_2plus",
+      "notes": "Aggregators also render it 'The Meat Center', but that 'The' form is associated with the separate closed Pageland Hwy business. Confirm exact preferred name with owner.",
+      "sources": [
+        "https://www.chamberofcommerce.com/business-directory/south-carolina/lancaster/butcher-shop/2000115897-meat-center",
+        "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/",
+        "https://meat-center.wheree.com/"
+      ]
+    },
+    "tagline_or_self_description": {
+      "value": null,
+      "tag": "not_found",
+      "notes": "No owner-authored tagline located (no official website or confirmed social page for the target). Aggregator 'about' blurbs are AI-generated from reviews, not the business's own words — not usable as a tagline.",
+      "sources": []
+    },
+    "year_established": {
+      "value": "Conflicting: ~1987 (Facebook 'Family Owned for 39 years' as of 2026) vs 1992 (Buzzfile)",
+      "tag": "uncertain",
+      "notes": "Facebook Intro says 'Family Owned for 39 years!' (=> ~1987). Buzzfile says founded 1992. These disagree by ~5 years. 'Family owned' itself is first-party confirmed; the exact year is not. Do NOT print a specific founding year until the owner confirms.",
+      "sources": [
+        "https://www.facebook.com/TheMeatCenter/",
+        "https://www.buzzfile.com/business/Meat-Center-803-286-5077"
+      ]
+    },
+    "family_owned": {
+      "value": true,
+      "tag": "single_source",
+      "notes": "First-party: Facebook Intro states 'Family Owned for 39 years!' Safe to describe as a family-owned shop; just don't pin the exact number of years.",
+      "sources": ["https://www.facebook.com/TheMeatCenter/"]
+    },
+    "story": {
+      "value": null,
+      "tag": "not_found",
+      "notes": "No founding story published. See open_questions.",
+      "sources": []
+    },
+    "owner_names": {
+      "value": "Billy C. Everall (listed by aggregators as owner) — but DECEASED Dec 22, 2025; current ownership unknown",
+      "tag": "uncertain",
+      "notes": "Buzzfile lists 'Billy Everall, Owner' against phone 803-286-5077. His Dec 2025 obituary calls him 'former owner of The Meat Center.' The shop is clearly still operating (Facebook active June 2026, reviews May 2026) and Facebook says 'Family Owned' — so it continues under family/new ownership. DO NOT name a current owner on the website. Describe it as 'family owned' only. Confirm who currently owns/operates the business.",
+      "sources": [
+        "https://www.buzzfile.com/business/Meat-Center-803-286-5077",
+        "https://www.burgessfunerals.com/obituaries/billy-everall"
+      ]
+    }
+  },
+
+  "contact_location": {
+    "address": {
+      "value": "657 Lancaster Bypass E (Hwy 9 Bypass E), Lancaster, SC 29720",
+      "tag": "verified_2plus",
+      "notes": "657 is the most common and is geo-confirmed. Conflicting street numbers exist: Buzzfile says 622 Hwy 9 Byp E; Whereorg says 662 Lancaster Byp E. Confirm exact number with owner before printing.",
+      "sources": [
+        "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/",
+        "https://meat-center.wheree.com/",
+        "https://www.chamberofcommerce.com/business-directory/south-carolina/lancaster/butcher-shop/2000115897-meat-center"
+      ]
+    },
+    "geo": {
+      "value": { "lat": 34.7290745, "lng": -80.7560651 },
+      "tag": "verified_2plus",
+      "notes": "Same coordinates on Loc8NearMe and the Wheree Google Maps embed.",
+      "sources": [
+        "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/",
+        "https://meat-center.wheree.com/"
+      ]
+    },
+    "google_maps_place": {
+      "value": "Google place id 0x8855d6ffffe1db0f:0x3aef90248bf19688 ('Meat Center')",
+      "tag": "single_source",
+      "notes": "Extracted from the Google Maps embed on Wheree. Confirm it resolves to the correct active listing.",
+      "sources": ["https://meat-center.wheree.com/"]
+    },
+    "phone": {
+      "value": "803-286-5077",
+      "tag": "verified_2plus",
+      "sources": [
+        "https://www.chamberofcommerce.com/business-directory/south-carolina/lancaster/butcher-shop/2000115897-meat-center",
+        "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/",
+        "https://www.buzzfile.com/business/Meat-Center-803-286-5077"
+      ]
+    },
+    "email": {
+      "value": null,
+      "tag": "not_found",
+      "sources": []
+    },
+    "website": {
+      "value": null,
+      "tag": "not_found",
+      "notes": "No existing official website (this project is the first).",
+      "sources": []
+    },
+    "social_links": {
+      "value": {
+        "facebook": "https://www.facebook.com/TheMeatCenter/",
+        "instagram": "https://www.instagram.com/the.meatcenter/"
+      },
+      "tag": "single_source",
+      "notes": "Facebook is CONFIRMED as the target's (Intro shows 657 Lancaster Bypass East + 803-286-5077, 43K followers, active). Safe to link. Instagram @the.meatcenter is likely the target's too but was NOT re-verified — confirm before linking it.",
+      "sources": [
+        "https://www.facebook.com/TheMeatCenter/",
+        "https://www.instagram.com/the.meatcenter/"
+      ]
+    },
+    "nearby_landmark": {
+      "value": "Retail strip on Lancaster Bypass E / Hwy 9 Bypass; neighboring businesses include AutoZone (615), Mully's restaurant (695), Energy Center Appliance (667)",
+      "tag": "single_source",
+      "notes": "Neighbor addresses listed by Wheree's 'around you' section. Useful for a 'how to find us' line; verify before publishing.",
+      "sources": ["https://meat-center.wheree.com/"]
+    },
+    "parking_notes": {
+      "value": null,
+      "tag": "not_found",
+      "notes": "Likely a strip-mall/storefront lot given the location, but not verified. Confirm with owner.",
+      "sources": []
+    }
+  },
+
+  "hours": {
+    "value": {
+      "monday": "9:00 AM - 6:00 PM",
+      "tuesday": "9:00 AM - 6:00 PM",
+      "wednesday": "9:00 AM - 6:00 PM",
+      "thursday": "9:00 AM - 6:00 PM",
+      "friday": "9:00 AM - 6:00 PM",
+      "saturday": "9:00 AM - 5:00 PM",
+      "sunday": "Closed"
+    },
+    "tag": "verified_2plus",
+    "conflicts": [
+      "Saturday is uncertain: Loc8NearMe and Wheree say Sat 9 AM-5 PM; Chamber of Commerce says Sat 9 AM-6 PM. CONFIRM Saturday closing time with owner."
+    ],
+    "seasonal_notes": {
+      "value": null,
+      "tag": "not_found",
+      "notes": "No holiday/seasonal hour notes found."
+    },
+    "sources": [
+      "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/",
+      "https://meat-center.wheree.com/",
+      "https://www.chamberofcommerce.com/business-directory/south-carolina/lancaster/butcher-shop/2000115897-meat-center"
+    ]
+  },
+
+  "products_services": {
+    "confirmed_products": {
+      "value": ["Beef", "Pork", "Chicken / poultry", "Fresh seafood", "Certified Angus Beef", "Wagyu (beef patties & ground beef)", "Fresh vegetables", "Breads", "Side items"],
+      "tag": "verified_2plus",
+      "notes": "Beef/pork/chicken plus produce/breads/sides recur across reviews. Facebook (first-party) adds 'Fresh Seafood', Certified Angus Beef, and Wagyu (in bundle graphics). All now well-supported.",
+      "sources": [
+        "https://www.facebook.com/TheMeatCenter/",
+        "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/",
+        "https://meat-center.wheree.com/",
+        "https://www.chamberofcommerce.com/business-directory/south-carolina/lancaster/butcher-shop/2000115897-meat-center"
+      ]
+    },
+    "confirmed_services": {
+      "value": ["Weekly specials / promotions", "Bulk 'bundle' / box deals (buy-in-bulk to save)", "In-store pickup", "Inspected daily by SC Meat and Poultry Inspectors"],
+      "tag": "verified_2plus",
+      "notes": "Bundle/box deals and weekly specials cited in reviews AND on Facebook. 'In-store pickup' and 'Price Range $' are listed on the FB page. 'Inspected daily by SC Meat and Poultry Inspectors' is stated in the FB Intro (first-party).",
+      "sources": [
+        "https://www.facebook.com/TheMeatCenter/",
+        "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/",
+        "https://meat-center.wheree.com/"
+      ]
+    },
+    "fresh_never_frozen": {
+      "value": "Markets meats as fresh daily / never frozen",
+      "tag": "single_source",
+      "notes": "First-party Facebook bundle graphic uses 'FRESH EVERY DAY' and 'FRESH — you can never trust FROZEN'. Safe to echo this as their own marketing message; attribute as their claim, not an independent fact.",
+      "sources": ["https://www.facebook.com/TheMeatCenter/"]
+    },
+    "claimed_but_unverified": {
+      "custom_cuts": {
+        "tag": "uncertain",
+        "notes": "Aggregator FAQ says staff accommodate custom cut requests, but this reads as templated boilerplate; not seen on Facebook. Confirm with owner.",
+        "sources": ["https://meat-center.wheree.com/"]
+      }
+    },
+    "not_found_confirm_with_owner": [
+      "Deli / prepared foods / sandwiches",
+      "Smoked meats / on-site smoking",
+      "Holiday or pre-order programs (note: they DO run holiday-themed bundles, e.g. Father's Day; confirm a formal pre-order process)",
+      "Freezer / quarter-half-whole animal orders (specifics)",
+      "House-made sausage",
+      "Dry aging",
+      "Custom cuts (see above)"
+    ]
+  },
+
+  "facebook_first_party": {
+    "tag": "single_source",
+    "source": "https://www.facebook.com/TheMeatCenter/",
+    "page_stats": "43K followers; 98% recommend (507 reviews); Butcher Shop; Price Range $; In-store pickup; 'Open now' as of 2026-06-18.",
+    "taglines_their_own_words": [
+      "Quality Meats. Fresh Seafood. Great Prices.",
+      "Premium Quality. Great Value. Fresh Every Day.",
+      "Great Meals. Great Prices. All Week Long!",
+      "Fresh — you can never trust frozen. Perfect for families."
+    ],
+    "example_bundle_deal": {
+      "headline": "Bundle Deal — $99.99",
+      "contents_as_listed": [
+        "1 x 6pk Wagyu hamburger patties",
+        "1 x 1 lb Wagyu ground beef",
+        "2 x 12oz Certified Angus boneless ribeyes",
+        "1 x 12oz Certified Angus Porterhouse steak",
+        "1 x 12oz Certified Angus T-bone",
+        "2 x 12oz Certified Angus New York strips",
+        "2 x 8oz Certified Angus filet mignon"
+      ],
+      "notes": "Transcribed from a Facebook promo graphic (auto-generated alt text). VERIFY exact contents and the $99.99 price with the owner before publishing — promo pricing changes weekly. Good proof that they run premium, specific bundle deals."
+    },
+    "post_style_observed": [
+      "Engagement / giveaway posts (e.g. a 'guessing game' for a free Father's Day Bundle)",
+      "Seasonal & holiday tie-ins (Father's Day bundles; Memorial Day patriotic post 'All gave some...')",
+      "Weekly bundle/special promo graphics featuring Certified Angus Beef and Wagyu"
+    ],
+    "usage_guidance": "Use these as PROOF POINTS and copy inspiration. The taglines are the business's own words and are safe to echo. Treat specific prices/contents as time-sensitive — present as 'example bundle' or pull live, and confirm with owner."
+  },
+
+  "pricing": {
+    "value": "No standing price list public. One first-party example: a 'Bundle Deal' at $99.99 (premium beef bundle, see facebook_first_party.example_bundle_deal).",
+    "tag": "single_source",
+    "notes": "Reviews describe prices as very affordable ('half' of grocery stores). Facebook shows specific weekly bundle pricing (e.g. $99.99) but these rotate. Do NOT hardcode prices as permanent; present bundles as examples / 'see our latest specials on Facebook' and confirm with owner.",
+    "sources": [
+      "https://www.facebook.com/TheMeatCenter/",
+      "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/"
+    ]
+  },
+
+  "reputation": {
+    "rating": {
+      "value": "Approx. 4.7 / 5 stars on Google; 98% recommend (507 reviews) on Facebook",
+      "tag": "verified_2plus",
+      "notes": "Google rating 4.7 consistent across sources. Google review COUNT varies by aggregator: ~489 (Chamber) vs 723 (ButcherBud) — treat as approximate; pull the live count at build time. Facebook separately shows '98% recommend (507 Reviews)'.",
+      "sources": [
+        "https://www.facebook.com/TheMeatCenter/",
+        "https://www.chamberofcommerce.com/business-directory/south-carolina/lancaster/butcher-shop/2000115897-meat-center",
+        "https://butcherbud.com/listing/meat-center-sc"
+      ]
+    },
+    "recurring_praise_themes_paraphrased": {
+      "value": [
+        "High-quality meats with a large variety of cuts",
+        "Prices customers consider very low / great value (often compared favorably to grocery stores)",
+        "Clean, well-organized store",
+        "Friendly, courteous, helpful staff",
+        "Good bulk 'box' deals and weekly specials that bring people back",
+        "Worth driving to from out of town"
+      ],
+      "tag": "verified_2plus",
+      "sources": [
+        "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/",
+        "https://meat-center.wheree.com/",
+        "https://www.chamberofcommerce.com/business-directory/south-carolina/lancaster/butcher-shop/2000115897-meat-center"
+      ]
+    },
+    "recurring_complaint_themes_paraphrased": {
+      "value": [
+        "Occasional mentions of recent price increases",
+        "Occasional stock limits / selection gaps during busy times"
+      ],
+      "tag": "single_source",
+      "notes": "Minor and infrequent; drawn from aggregated review summaries, not individually verified.",
+      "sources": [
+        "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/",
+        "https://meat-center.wheree.com/"
+      ]
+    },
+    "candidate_testimonials_CONFIRM_BEFORE_USE": {
+      "tag": "uncertain",
+      "notes": "Each is <=15 words. Reviewer names come from Chamber's republished Google reviews; Loc8NearMe quotes had no names attached. CONFIRM authenticity, attribution, and permission before publishing any of these.",
+      "value": [
+        {
+          "quote": "Great selection of high quality meats and very reasonable prices.",
+          "reviewer_first_name": "Charles",
+          "source": "https://www.chamberofcommerce.com/business-directory/south-carolina/lancaster/butcher-shop/2000115897-meat-center"
+        },
+        {
+          "quote": "The store is very clean and well organized. The employees are very nice.",
+          "reviewer_first_name": "Joyce",
+          "source": "https://www.chamberofcommerce.com/business-directory/south-carolina/lancaster/butcher-shop/2000115897-meat-center"
+        },
+        {
+          "quote": "So clean and prices are half of what they are anywhere else!",
+          "reviewer_first_name": "(name not shown)",
+          "source": "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/"
+        }
+      ]
+    }
+  },
+
+  "brand_tone_read": {
+    "value": "Old-school, no-frills hometown meat market: a small family-style butcher counter focused on quality cuts at honest, beat-the-grocery-store prices, known for bulk box deals and weekly specials. The vibe is friendly, clean, and community-rooted — a longtime local staple rather than a trendy craft butcher.",
+    "tag": "verified_2plus",
+    "notes": "Synthesized from recurring review themes; design/copy should lean warm, plainspoken, value-forward. See brief.md for full read.",
+    "sources": [
+      "https://www.loc8nearme.com/south-carolina/lancaster/meat-center/5669331/",
+      "https://meat-center.wheree.com/"
+    ]
+  }
+}

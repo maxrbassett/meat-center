@@ -1,0 +1,57 @@
+---
+import * as site from '@data/site';
+const s = site.signup;
+---
+
+<section class="signup" aria-labelledby="signup-title">
+  <div class="wrap signup-inner">
+    <div class="signup-text">
+      <p class="eyebrow">Weekly specials</p>
+      <h2 id="signup-title" class="signup-title">{s.heading}</h2>
+      <p>{s.blurb}</p>
+    </div>
+
+    <!-- POC: front-end only. Connect to an email/SMS provider before launch. -->
+    <form class="signup-form" data-demo-form aria-label="Sign up for weekly specials">
+      <label class="sr-only" for="su-contact">Email or mobile number</label>
+      <input id="su-contact" name="contact" type="text" placeholder="Email or mobile number" required />
+      <button class="btn btn-gold" type="submit">Send me the deals</button>
+      <p class="form-success" data-success hidden>✓ You’re on the list! <em>(Demo only)</em></p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .signup { background: var(--red); color: #fff; }
+  .signup-inner {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  @media (min-width: 840px) { .signup-inner { grid-template-columns: 1.1fr 0.9fr; gap: 3rem; } }
+
+  .signup-title { color: #fff; text-transform: uppercase; font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 0.4rem; }
+  .signup .eyebrow { color: var(--gold-soft); }
+  .signup-text p { color: #ffe9e9; max-width: 48ch; }
+
+  .signup-form { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .signup-form input {
+    flex: 1 1 240px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.85rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
+  }
+  .signup-form input:focus { outline: none; border-color: var(--gold); }
+  .signup-form .btn { flex: 0 0 auto; }
+  .form-success {
+    flex-basis: 100%;
+    margin: 0.25rem 0 0;
+    font-weight: 600;
+    color: #fff;
+  }
+</style>

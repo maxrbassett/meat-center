@@ -1,0 +1,75 @@
+---
+import * as site from '@data/site';
+import { Image } from 'astro:assets';
+import ribeye from '@assets/cut-ribeye.jpg';
+import sirloin from '@assets/cut-sirloin.jpg';
+import filet from '@assets/cut-filet.jpg';
+import stewbeef from '@assets/cut-stewbeef.jpg';
+import groundbeef from '@assets/cut-groundbeef.jpg';
+import strip from '@assets/cut-strip.jpg';
+
+const tiles = [
+  { img: ribeye, label: 'Ribeye' },
+  { img: sirloin, label: 'Top sirloin' },
+  { img: filet, label: 'Filet mignon' },
+  { img: stewbeef, label: 'Stew beef' },
+  { img: groundbeef, label: 'Fresh ground beef' },
+  { img: strip, label: 'New York strip' },
+];
+---
+
+<section id="gallery" class="gallery" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <p class="eyebrow">Fresh from our case</p>
+    <h2 id="gallery-title" class="section-title">The good stuff</h2>
+    <p class="section-intro">{site.galleryCaption}</p>
+
+    <div class="grid">
+      {
+        tiles.map((t) => (
+          <figure class="tile">
+            <Image src={t.img} alt={t.label} widths={[220, 360]} sizes="(min-width: 720px) 30vw, 45vw" />
+            <figcaption>{t.label}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .gallery { background: var(--cream-deep); }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  @media (min-width: 720px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 1.1rem; } }
+
+  .tile {
+    position: relative;
+    margin: 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    aspect-ratio: 4 / 3;
+  }
+  .tile :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .tile:hover :global(img) { transform: scale(1.06); }
+  .tile figcaption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 1.4rem 0.85rem 0.6rem;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.82rem;
+    color: #fff;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent);
+  }
+</style>

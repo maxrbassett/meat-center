@@ -1,0 +1,139 @@
+---
+import * as site from '@data/site';
+const p = site.preorder;
+---
+
+<section id="preorder" class="preorder" aria-labelledby="preorder-title">
+  <div class="wrap preorder-grid">
+    <div class="preorder-intro">
+      <p class="eyebrow">Plan ahead</p>
+      <h2 id="preorder-title" class="section-title">{p.heading}</h2>
+      <p class="section-intro">{p.blurb}</p>
+      <ul class="preorder-points">
+        <li>Reserve early for Thanksgiving, Christmas &amp; the holidays</li>
+        <li>We cut, box and have it ready for {site.pickupNote.toLowerCase().replace('available', 'pickup')}</li>
+        <li>Prefer to talk it through? Call <a href={`tel:${site.phoneTel}`}>{site.phone}</a></li>
+      </ul>
+    </div>
+
+    <!-- POC: front-end only. Wire this to email/SMS or a form service before launch. -->
+    <form class="preorder-form" data-demo-form aria-label="Pre-order request">
+      <div class="field">
+        <label for="po-name">Your name</label>
+        <input id="po-name" name="name" type="text" autocomplete="name" required />
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="po-phone">Phone</label>
+          <input id="po-phone" name="phone" type="tel" autocomplete="tel" required />
+        </div>
+        <div class="field">
+          <label for="po-date">Pickup date</label>
+          <input id="po-date" name="date" type="date" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="po-item">What do you need?</label>
+          <select id="po-item" name="item">
+            {p.options.map((o) => <option>{o}</option>)}
+          </select>
+        </div>
+        <div class="field">
+          <label for="po-occasion">Occasion</label>
+          <select id="po-occasion" name="occasion">
+            {p.occasions.map((o) => <option>{o}</option>)}
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="po-notes">Details (cuts, quantity, etc.)</label>
+        <textarea id="po-notes" name="notes" rows="3"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Request pre-order</button>
+      <p class="form-fine">We’ll call to confirm your order and total. No payment online.</p>
+      <p class="form-success" data-success hidden>
+        ✓ Thanks! Your request is in — we’ll call you to confirm. <em>(Demo only)</em>
+      </p>
+    </form>
+  </div>
+</section>
+
+<script>
+  // POC: intercept submit and show a success state instead of posting anywhere.
+  document.querySelectorAll('[data-demo-form]').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const ok = (form as HTMLElement).querySelector('[data-success]') as HTMLElement | null;
+      if (ok) ok.hidden = false;
+      (form as HTMLFormElement).reset();
+    });
+  });
+</script>
+
+<style>
+  .preorder { background: var(--charcoal); color: var(--cream); }
+  .preorder .section-title { color: #fff; }
+  .preorder .eyebrow { color: var(--gold-soft); }
+  .preorder .section-intro { color: #e9ddc8; }
+
+  .preorder-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  @media (min-width: 860px) { .preorder-grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+
+  .preorder-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+  .preorder-points li {
+    position: relative;
+    padding-left: 1.6rem;
+    color: #e9ddc8;
+  }
+  .preorder-points li::before { content: '✓'; position: absolute; left: 0; color: var(--gold-soft); font-weight: 700; }
+  .preorder-points a { color: var(--gold-soft); }
+
+  .preorder-form {
+    background: var(--white);
+    color: var(--ink);
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 4vw, 2rem);
+    box-shadow: var(--shadow-lg);
+    display: grid;
+    gap: 1rem;
+  }
+  .row { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 520px) { .row { grid-template-columns: 1fr 1fr; } }
+  .field { display: flex; flex-direction: column; gap: 0.35rem; }
+  .field label {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.74rem;
+    color: var(--charcoal-soft);
+  }
+  .field input, .field select, .field textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(192, 31, 39, 0.15);
+  }
+  .form-fine { font-size: 0.85rem; color: var(--charcoal-soft); margin: 0; }
+  .form-success {
+    margin: 0;
+    color: #1c7d3a;
+    font-weight: 600;
+    background: #e8f6ec;
+    border-radius: 10px;
+    padding: 0.7rem 0.9rem;
+  }
+</style>

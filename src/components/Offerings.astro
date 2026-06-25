@@ -1,0 +1,143 @@
+---
+import * as site from '@data/site';
+import { Image } from 'astro:assets';
+import ribeye from '@assets/cut-ribeye.jpg';
+import groundbeef from '@assets/cut-groundbeef.jpg';
+const premiumImages = [ribeye, groundbeef];
+---
+
+<section id="offer" aria-labelledby="offer-title">
+  <div class="wrap">
+    <p class="eyebrow">What we sell</p>
+    <h2 id="offer-title" class="section-title">Premium beef &amp; a whole lot more</h2>
+    <p class="section-intro">
+      We lead with what we’re known for — Certified Angus Beef and Wagyu, cut
+      fresh in store — and back it up with everything else you need for the table.
+    </p>
+
+    <div class="premium">
+      {
+        site.premiumBeef.map((b, i) => (
+          <article class="premium-card">
+            <div class="premium-media">
+              <Image src={premiumImages[i]} alt={b.name} widths={[300, 500]} sizes="(min-width: 640px) 40vw, 90vw" />
+            </div>
+            <div class="premium-text">
+              <h3>{b.name}</h3>
+              <p>{b.blurb}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="offer-grid">
+      <div class="card">
+        <h3>In the case &amp; on the shelves</h3>
+        <ul class="tags">
+          {site.products.map((p) => <li>{p}</li>)}
+        </ul>
+        <p class="fresh">{site.freshClaim}</p>
+      </div>
+
+      <div class="card services-card">
+        <h3>How we help</h3>
+        <ul class="services">
+          {
+            site.services.map((srv) => (
+              <li>
+                <span class="srv-icon" aria-hidden="true">{srv.icon}</span>
+                <span>
+                  <strong>{srv.title}</strong>
+                  <span class="srv-blurb">{srv.blurb}</span>
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .premium {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    margin-bottom: 1.5rem;
+  }
+  @media (min-width: 640px) { .premium { grid-template-columns: 1fr 1fr; } }
+
+  .premium-card {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    background: var(--charcoal);
+    color: var(--cream);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .premium-media :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .premium-text { padding: 1.3rem 1.4rem; }
+  .premium-text h3 {
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+  }
+  .premium-text p { margin: 0; color: #e9ddc8; font-size: 0.96rem; }
+
+  .offer-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 760px) { .offer-grid { grid-template-columns: 1fr 1fr; } }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.6rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .card h3 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.55rem; }
+  .tags li {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 0.45rem 0.95rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .fresh {
+    margin: 1.1rem 0 0;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--red);
+    font-size: 1.05rem;
+  }
+
+  .services { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+  .services li { display: flex; gap: 0.85rem; align-items: flex-start; }
+  .srv-icon { font-size: 1.4rem; line-height: 1.2; }
+  .services strong {
+    display: block;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 1.02rem;
+    color: var(--charcoal);
+  }
+  .srv-blurb { color: var(--charcoal-soft); font-size: 0.95rem; }
+</style>

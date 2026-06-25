@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" role="img" aria-label="Illustration of the Meat Center storefront: a white metal building with a red gable roof and red 'The Meat Center' sign">
+  <!-- PLACEHOLDER ILLUSTRATION — not a photograph. Modeled on the real storefront
+       (see src/assets/README.md). Swap with the owner's real photo before launch. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cdd6dd"/>
+      <stop offset="1" stop-color="#eef2f4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1000" height="430" fill="url(#sky)"/>
+  <ellipse cx="240" cy="90" rx="150" ry="38" fill="#ffffff" opacity="0.7"/>
+  <ellipse cx="760" cy="120" rx="180" ry="42" fill="#ffffff" opacity="0.6"/>
+
+  <!-- ground / parking lot -->
+  <rect y="430" width="1000" height="250" fill="#b9bcc0"/>
+  <rect y="430" width="1000" height="10" fill="#9aa0a6"/>
+  <!-- parking stripes -->
+  <g fill="#e9c84a">
+    <rect x="150" y="470" width="8" height="190"/>
+    <rect x="370" y="470" width="8" height="190"/>
+    <rect x="590" y="470" width="8" height="190"/>
+    <rect x="810" y="470" width="8" height="190"/>
+  </g>
+  <rect x="60" y="452" width="880" height="7" fill="#e9c84a"/>
+
+  <!-- building body -->
+  <rect x="70" y="250" width="860" height="200" fill="#f3f4f5" stroke="#d4d7da" stroke-width="2"/>
+  <!-- vertical metal panel lines -->
+  <g stroke="#dfe2e4" stroke-width="2">
+    <line x1="140" y1="252" x2="140" y2="448"/>
+    <line x1="210" y1="252" x2="210" y2="448"/>
+    <line x1="280" y1="252" x2="280" y2="448"/>
+    <line x1="720" y1="252" x2="720" y2="448"/>
+    <line x1="790" y1="252" x2="790" y2="448"/>
+    <line x1="860" y1="252" x2="860" y2="448"/>
+  </g>
+
+  <!-- red gable roof -->
+  <polygon points="60,250 500,70 940,250" fill="#c0392b"/>
+  <polygon points="60,250 500,70 940,250 940,272 500,96 60,272" fill="#9c2c20"/>
+
+  <!-- sign -->
+  <text x="500" y="190" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-style="italic" font-weight="700" fill="#e8a33d" stroke="#a83217" stroke-width="1.2">The Meat Center</text>
+
+  <!-- entrance awning -->
+  <rect x="360" y="300" width="280" height="26" fill="#c0392b"/>
+  <!-- double glass doors -->
+  <rect x="430" y="326" width="140" height="124" fill="#cfe0e6" stroke="#7f8c8d" stroke-width="3"/>
+  <line x1="500" y1="326" x2="500" y2="450" stroke="#7f8c8d" stroke-width="3"/>
+
+  <!-- flanking windows with small red awnings -->
+  <g>
+    <rect x="150" y="330" width="120" height="60" fill="#cfe0e6" stroke="#9aa0a6" stroke-width="2"/>
+    <rect x="146" y="322" width="128" height="12" fill="#c0392b"/>
+  </g>
+  <g>
+    <rect x="730" y="330" width="120" height="60" fill="#cfe0e6" stroke="#9aa0a6" stroke-width="2"/>
+    <rect x="726" y="322" width="128" height="12" fill="#c0392b"/>
+  </g>
+
+  <!-- ICE machine at right -->
+  <rect x="892" y="350" width="46" height="100" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+  <text x="915" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#2c6fb5" transform="rotate(90 915 404)">ICE</text>
+
+  <!-- subtle caption -->
+  <text x="500" y="660" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5b6166">PLACEHOLDER — replace with owner-supplied storefront photo</text>
+</svg>

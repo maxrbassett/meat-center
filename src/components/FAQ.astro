@@ -1,0 +1,70 @@
+---
+import * as site from '@data/site';
+---
+
+<section id="faq" class="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <p class="eyebrow">Good to know</p>
+    <h2 id="faq-title" class="section-title">Questions, answered</h2>
+
+    <div class="faq-list">
+      {
+        site.faqs.map((f, i) => (
+          <details class="faq-item" open={i === 0}>
+            <summary>
+              <span>{f.q}</span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <p>{f.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq { background: var(--cream); }
+  .faq-list {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 820px;
+  }
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+  .faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    list-style: none;
+    padding: 1.1rem 1.3rem;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 1.02rem;
+    color: var(--charcoal);
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .chevron {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--red);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+    flex: 0 0 auto;
+  }
+  .faq-item[open] .chevron { transform: rotate(45deg); }
+  .faq-item p {
+    margin: 0;
+    padding: 0 1.3rem 1.2rem;
+    color: var(--charcoal-soft);
+  }
+</style>

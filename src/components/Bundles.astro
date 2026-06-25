@@ -1,0 +1,116 @@
+---
+import * as site from '@data/site';
+---
+
+<section id="bundles" class="bundles" aria-labelledby="bundles-title">
+  <div class="wrap">
+    <p class="eyebrow">Family bundles &amp; box deals</p>
+    <h2 id="bundles-title" class="section-title">Stock the freezer for less</h2>
+    <p class="section-intro">
+      {site.familiesClaim} {site.freshClaim} Buy in bulk and save on premium cuts —
+      {site.pickupNote.toLowerCase()}
+    </p>
+
+    <div class="bundle-grid">
+      {
+        site.bundles.map((b) => (
+          <article class="bundle-card">
+            <div class="bundle-top">
+              <span class="bundle-tag">{b.tag}</span>
+              <h3>{b.name}</h3>
+              <p class="bundle-price">{b.price}</p>
+              <p class="bundle-blurb">{b.blurb}</p>
+            </div>
+            <ul class="bundle-items">
+              {b.items.map((item) => <li>{item}</li>)}
+            </ul>
+            <a class="btn btn-outline bundle-btn" href={`tel:${site.phoneTel}`}>Call to reserve</a>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="bundle-foot">
+      Bundles and prices shown are examples — they change with the season and what’s
+      fresh. Call <a href={`tel:${site.phoneTel}`}>{site.phone}</a> or
+      <a href={site.facebookUrl} target="_blank" rel="noopener">follow us on Facebook</a>
+      for this week’s line-up.
+    </p>
+  </div>
+</section>
+
+<style>
+  .bundles { background: var(--cream); }
+  .bundle-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  @media (min-width: 600px) { .bundle-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 980px) { .bundle-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .bundle-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--red);
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.12s ease, box-shadow 0.15s ease;
+  }
+  .bundle-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+  .bundle-tag {
+    align-self: flex-start;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--red);
+    background: rgba(192, 31, 39, 0.08);
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    margin-bottom: 0.7rem;
+  }
+  .bundle-card h3 { text-transform: uppercase; font-size: 1.2rem; margin-bottom: 0.25rem; }
+  .bundle-price {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--charcoal);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .bundle-blurb { color: var(--charcoal-soft); font-size: 0.92rem; margin-bottom: 1rem; }
+
+  .bundle-items {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+    flex: 1;
+  }
+  .bundle-items li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.92rem;
+    color: var(--ink);
+  }
+  .bundle-items li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-weight: 700;
+  }
+  .bundle-btn { width: 100%; }
+
+  .bundle-foot {
+    margin-top: 1.75rem;
+    font-size: 0.95rem;
+    color: var(--charcoal-soft);
+  }
+</style>
